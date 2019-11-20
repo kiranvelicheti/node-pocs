@@ -9,9 +9,7 @@
   "dependencies": {
     "@types/aws-serverless-express": "^3.3.2",
     "@types/ws": "^6.0.3",
-    "apollo-server-express": "^2.9.9",
     "apollo-server-lambda": "^2.5.0-rc.0",
-    "aws-serverless-express": "^3.3.6",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "graphql": "^14.5.8",
