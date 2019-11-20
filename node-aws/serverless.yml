@@ -1,0 +1,21 @@
+service: hello-world
+provider:
+  name: aws
+  runtime: nodejs10.x
+  stage: dev
+
+functions:
+  hello:
+    handler: dist/hello.handler
+    events:
+      - http:
+          path: hello
+          method: GET
+          cors: true
+  getUsers:
+    handler: dist/hello.readAllUsers
+    events:
+      - http:
+          path: users
+          method: GET
+          cors: true
