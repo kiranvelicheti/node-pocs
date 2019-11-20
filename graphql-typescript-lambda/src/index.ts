@@ -1,22 +1,20 @@
-import { ApolloServer } from "apollo-server-lambda";
-
+import { GraphQLServer } from "graphql-yoga";
 import "reflect-metadata";
-
-import { buildSchema, buildSchemaSync } from "type-graphql";
+import { buildSchema } from "type-graphql";
 import ProjectResolver from "./resolvers/ProjectResolver";
 import TaskResolver from "./resolvers/TaskResolver";
 
-// async function bootstrap() {
-const schema = buildSchemaSync({
-  resolvers: [ProjectResolver, TaskResolver],
-  emitSchemaFile: true
-});
+async function bootstrap() {
+  const schema = await buildSchema({
+    resolvers: [ProjectResolver, TaskResolver],
+    emitSchemaFile: true
+  });
 
-const server = new ApolloServer({
-  schema
-});
+  const server = new GraphQLServer({
+    schema
+  });
 
-exports.graphqlHandler = server.createHandler();
-// }
+  server.start(() => console.log("Server is running on http://localhost:4000"));
+}
 
-// export default bootstrap();
+export default bootstrap();
