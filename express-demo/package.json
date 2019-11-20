@@ -14,7 +14,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongodb": "^3.3.2",
-    "mongoose": "^5.7.4",
+    "mongoose": "^5.7.5",
     "nodemon": "^1.19.3",
     "sqs-consumer": "^5.4.0",
     "sqs-producer": "^1.6.3"
