@@ -8,7 +8,7 @@ import TaskResolver from "./resolvers/TaskResolver";
   (<any>global).cachedSchema ||
   buildSchemaSync({
     resolvers: [ProjectResolver, TaskResolver],
-    emitSchemaFile: true
+    emitSchemaFile: false
   });
 
 const schema = (<any>global).cachedSchema;
