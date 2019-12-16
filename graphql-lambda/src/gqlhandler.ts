@@ -3,11 +3,12 @@ import "reflect-metadata";
 import { buildSchemaSync } from "type-graphql";
 import ProjectResolver from "./resolvers/ProjectResolver";
 import TaskResolver from "./resolvers/TaskResolver";
+import UserResolver from "./resolvers/UserResolver";
 
 (<any>global).cachedSchema =
   (<any>global).cachedSchema ||
   buildSchemaSync({
-    resolvers: [ProjectResolver, TaskResolver],
+    resolvers: [ProjectResolver, TaskResolver, UserResolver],
     emitSchemaFile: false
   });
 
